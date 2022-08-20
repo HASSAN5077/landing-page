@@ -1,0 +1,314 @@
+<!-- #166cb7 -->
+<!-- #f16225 -->
+<!-- #60687b -->
+<!-- #30323f -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mulish', sans-serif;
+            transition: all .5s;
+        }
+        section{
+            width: 100vw;
+            height: 100vh;
+        }
+        .header{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .header .nav-left{
+            width: 4.5%;
+            position: absolute;
+            position: fixed;
+            height: 100vh;
+            background: #60687b;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            flex-direction: column;
+            text-align: center;
+
+        }
+        .header .nav-left h4{
+            color:#fff;
+            text-transform: uppercase;
+            font-family: 'Mulish', sans-serif;
+            letter-spacing: 4px;
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        .nav-left span{
+            width: 40px;
+            height: 2px;
+            margin-left: 9px;
+            background: #aeb4c3;
+            margin-bottom: 5px;
+        }
+        .nav-left span.lower{
+            width: 30px;
+        }
+        .header .nav-top{
+            position: absolute;
+            left: 4.5%;
+            position: fixed;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+            z-index: 1000;
+            color: #fff;
+        }
+        .header .nav-top img{
+            max-width: 170px;
+            height: 70px;
+            margin-left: 23px;
+            color: #fff;
+        }
+        /* .header .nav-top nav{ */
+            /* display: flex; */
+            /* align-items: center; */
+        
+        .header .nav-top nav ul{
+            display: flex;
+            /* text-decoration: none; */
+            list-style: none;
+            align-items: center;
+        }
+        .header .nav-top nav ul li{
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-right: 15px;
+            line-height: 3;
+        }
+        .header .nav-top nav ul i{
+            background: #f16225;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .header .search{
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            background: #f16225;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .header .search input{
+            font-size: 50px;
+            background: none;
+            border: none;
+            outline: none;
+            width: 70%;
+            color: #fff;
+            padding: 10px 20px;
+            border-bottom: 3px solid #fff;
+        }
+        .header .search h2{
+            color: #fff;
+            position: absolute;
+            right: 30px;
+            top: 50px;
+            cursor: pointer;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+        .header .search.active{
+            visibility: visible;
+            opacity: 1;
+        }
+        .header .slider-section{
+            width: calc(100vw - 4.5%);
+            height: 100vh;
+            left: 4.5%;
+            position: relative;
+            position: absolute;
+            overflow: hidden;
+        }
+        .slider-section .left-side{
+            height: 100vh;
+            width: 42%;
+            position: relative;
+        }
+        .slider-section .left-side .box{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            padding: 80px;
+            position: relative;
+            justify-content: center;
+            /* align-items: center; */
+            flex-direction: column;
+        }
+        .btn{
+            padding:13px 80px 13px 40px;
+            border: 2px solid rgba(255,255,255,.5);
+            text-decoration: none;
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 25px;
+            position: absolute;
+            bottom: 50px;
+        }
+        .header .slider-section .left-side h3{
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .header .slider-section .left-side p{
+            color: #fff;
+            margin-top: 15px;
+            font-size: 22px;
+        }
+        .header .slider-section .right-side{
+            width: calc(100% - 42% );
+            height: 100%;
+            left: 42%;
+            position: absolute;
+        }
+        .header .slider-section .right-side div{
+            width: 100%;
+            height: 100%;
+        }
+        .header .slider-section .right-side div img{
+            width: 100%;
+            height: 100%;
+        }
+        .navigation{
+            position: fixed;
+            top: 50%;
+            width: 10%;
+            height: 10%;
+            right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .navigation span{
+            width: 60px;
+            height: 5px;
+            margin: 5px 0;
+            border-radius: .5rem;
+            background: #60687b;
+            cursor: pointer;
+        }
+        .navigation span.active{
+            background: #f16225;
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <div class="nav-left">
+            <h4>menu</h4>
+            <span class="upper"></span>
+            <span class="lower"></span>
+        </div>
+        <div class="nav-top">
+            <img src="logo.png" alt="">
+            <nav>
+                <ul>
+                    <li>case studies</li>
+                    <li>careers</li>
+                    <li>contact</li>
+                    <i class="fas fa-search" id="search"></i>
+                </ul>
+            </nav>
+        </div>
+        <div class="search">
+            <h2 class="closeSearch">Close</h2>
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="slider-section">
+            <div class="left-side">
+                <div class="box" style="background: #166bc7;">
+                    <h3>Microsoft Business Application 2021/2022 Inner Circle award
+                    </h3>
+                    <p>Systems Limited wins the top 1% of global Technology Partners for Microsoft Business Applications.
+                    </p>
+                    <a href="" class="btn">read more</a>
+                </div>
+                <div class="box" style="background: #30323f;">
+                    <h3>Microsoft Business Application 2021/2022 Inner Circle award
+                    </h3>
+                    <p>Systems Limited wins the top 1% of global Technology Partners for Microsoft Business Applications.
+                    </p>
+                    <a href="" class="btn">read more</a>
+                </div>
+                <div class="box" style="background: #DF0A32;">
+                    <h3>Microsoft Business Application 2021/2022 Inner Circle award
+                    </h3>
+                    <p>Systems Limited wins the top 1% of global Technology Partners for Microsoft Business Applications.
+                    </p>
+                    <a href="" class="btn">read more</a>
+                </div>
+                <div class="box" style="background: #dc833f;">
+                    <h3>Microsoft Business Application 2021/2022 Inner Circle award
+                    </h3>
+                    <p>Systems Limited wins the top 1% of global Technology Partners for Microsoft Business Applications.
+                    </p>
+                    <a href="" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div><img src="Studio-77-By-Systems-Limited.jpg" alt=""></div>
+                <div><img src="MicrosoftTeams-image-32.png" alt=""></div>
+                <div><img src="MicrosoftTeams-image-16-1.jpg" alt=""></div>
+                <div><img src="Slider-Image.jpg" alt=""></div>
+            </div>
+            <div class="navigation">
+                <span onclick="changeSlider(1);" class="active"></span>
+                <span onclick="changeSlider(2);"></span>
+                <span onclick="changeSlider(3);"></span>
+                <span onclick="changeSlider(4);"></span>
+            </div>
+        </div>
+    </section>
+    <script>
+        var searchContainer = document.querySelector('.search');
+        var closeSearch = document.querySelector('.closeSearch');
+        var searchIcon = document.querySelector('#search');
+        searchIcon.addEventListener("click",()=>{
+            searchContainer.classList.add('active');
+        });
+        closeSearch.addEventListener('click',()=>{
+            searchContainer.classList.remove('active');
+        })
+        const container = document.querySelector('.slider-section');
+        const sliderLeft = document.querySelector('.left-side');
+        const sliderRight = document.querySelector('.right-side');
+        const sliderLength = sliderRight.querySelectorAll('div').length;
+        sliderRight.style.top = `-${(sliderLength - 1) * 100}vh`;
+        let active = 0;
+        const changeSlider = (e)=>{
+            const sliderHeight = container.clientHeight;
+            // active++;
+            active=e
+            if(active > sliderLength -1)
+            {
+                active = 0;
+            }
+            sliderLeft.style.transform = `translateY(-${active * sliderHeight}px)`
+            sliderRight.style.transform = `translateY(${active * sliderHeight}px)`
+        }
+
+        // setInterval(changeSlider,2500);
+    </script>
+</body>
+</html>
